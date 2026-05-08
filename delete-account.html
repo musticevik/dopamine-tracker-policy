@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dopamine Tracker — Hesap Silme / Account Deletion</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+           max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #222; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin-top: 32px; }
+    h3 { font-size: 16px; margin-top: 20px; }
+    p, li { font-size: 15px; }
+    a { color: #2ECC71; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    .meta { color: #666; font-size: 13px; margin-bottom: 24px; }
+    .lang-toggle { margin-bottom: 24px; }
+    .lang-toggle a { margin-right: 12px; text-decoration: none; padding: 6px 12px;
+                     border: 1px solid #ddd; border-radius: 6px; }
+    section.lang-en { display: none; }
+    body.show-en section.lang-en { display: block; }
+    body.show-en section.lang-tr { display: none; }
+    .step { background: #f9f9f9; border-left: 3px solid #2ECC71; padding: 12px 16px; margin: 12px 0; border-radius: 4px; }
+    .deleted { background: #fff4f4; border-left: 3px solid #F87171; padding: 12px 16px; margin: 12px 0; border-radius: 4px; }
+    .retained { background: #f0f7ff; border-left: 3px solid #2CB1BC; padding: 12px 16px; margin: 12px 0; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <a href="#tr" onclick="document.body.classList.remove('show-en')">🇹🇷 Türkçe</a>
+  <a href="#en" onclick="document.body.classList.add('show-en')">🇬🇧 English</a>
+</div>
+
+<!-- ========== TÜRKÇE ========== -->
+<section class="lang-tr" id="tr">
+
+<h1>Dopamine Tracker — Hesap Silme</h1>
+<p class="meta">
+  Geliştirici: Mustafa Çevik (AgilerSoft) ·
+  Uygulama: Dopamine Tracker (<code>com.agilersoft.dopaminetracker</code>) ·
+  Son güncelleme: 8 Mayıs 2026
+</p>
+
+<p>
+  Bu sayfada Dopamine Tracker hesabınızı ve hesabınızla ilişkili tüm verileri nasıl
+  kalıcı olarak silebileceğiniz açıklanmıştır. İşlem geri alınamaz.
+</p>
+
+<h2>1. Yöntem: Uygulama içinden silme (Önerilen)</h2>
+
+<p>En hızlı yol uygulama içindeki silme akışıdır — tek dokunuşta tüm veriler kalıcı olarak yok edilir.</p>
+
+<div class="step">
+  <strong>Adım 1.</strong> Dopamine Tracker'ı aç ve hesabınla giriş yap.
+</div>
+<div class="step">
+  <strong>Adım 2.</strong> Alt menüden <strong>Profil</strong> sekmesine git.
+</div>
+<div class="step">
+  <strong>Adım 3.</strong> Sayfanın altına kaydır ve <strong>"Hesabımı sil"</strong> butonuna dokun.
+</div>
+<div class="step">
+  <strong>Adım 4.</strong> Açılan onay penceresinde "Devam et" → "Hesabımı kalıcı olarak sil" seç.
+</div>
+
+<p>
+  İşlem tamamlandığında hesabınız ve tüm verileriniz Supabase sunucularımızdan
+  <strong>anında ve kalıcı olarak</strong> silinir.
+</p>
+
+<h2>2. Yöntem: E-posta ile silme talebi</h2>
+
+<p>
+  Uygulamaya erişiminiz yoksa (cihazı kaybettiniz, app'i sildiniz vb.) silme talebinizi
+  e-posta yoluyla gönderebilirsiniz:
+</p>
+
+<div class="step">
+  <strong>Alıcı:</strong> <a href="mailto:agilersoft@gmail.com?subject=Hesap%20Silme%20Talebi">agilersoft@gmail.com</a><br>
+  <strong>Konu:</strong> Hesap Silme Talebi<br>
+  <strong>Mesaj içeriği:</strong> Hesabınızla ilişkili e-posta adresinizden gönderim yapın.
+  Mesajda silinmesini istediğinizi açıkça belirtin.
+</div>
+
+<p>
+  Talebiniz <strong>en geç 7 iş günü</strong> içinde işleme alınır ve hesabınız silinir.
+  Silme tamamlandığında onay e-postası göndereceğiz.
+</p>
+
+<h2>Hangi veriler silinir</h2>
+<div class="deleted">
+  <strong>Kalıcı olarak silinen veriler:</strong>
+  <ul>
+    <li>Hesap kimliği (e-posta, kullanıcı ID)</li>
+    <li>Profil bilgileri (ad, dil tercihi, tema, motivasyon seçimleri, hedefler)</li>
+    <li>Skor geçmişi (günlük dopamine skorları)</li>
+    <li>Odak oturumu kayıtları</li>
+    <li>Engelleme kuralları</li>
+    <li>Streak (seri) bilgisi</li>
+    <li>Doğrulama tokenları ve oturum bilgileri</li>
+  </ul>
+</div>
+
+<h2>Saklanmaya devam eden veriler</h2>
+<div class="retained">
+  <strong>Yasal yükümlülük gereği saklanan:</strong>
+  <ul>
+    <li>Anonim hata günlükleri (90 gün) — kişisel veri içermez, hesabınızla ilişkilendirilemez</li>
+  </ul>
+  <p style="margin-top: 8px; font-size: 13px;">
+    Bu kayıtlar 90 gün içinde otomatik olarak silinir.
+  </p>
+</div>
+
+<h2>Cihazınızdaki yerel veriler</h2>
+<p>
+  Uygulamanın cihazınızdaki yerel veritabanı (kullanım istatistikleri, önbellek)
+  <strong>uygulamayı kaldırdığınızda</strong> Android sistemi tarafından otomatik silinir.
+  Bu verilerin sunucularımıza gönderilmediğini unutmayın.
+</p>
+
+<h2>Sorularınız için</h2>
+<p>
+  <a href="mailto:agilersoft@gmail.com">agilersoft@gmail.com</a> adresine yazın.
+  Genelde 1-2 iş günü içinde dönüş yaparız.
+</p>
+
+<p style="margin-top: 32px;">
+  📜 <a href="./">Gizlilik Politikası</a>
+</p>
+
+</section>
+
+<!-- ========== ENGLISH ========== -->
+<section class="lang-en" id="en">
+
+<h1>Dopamine Tracker — Account Deletion</h1>
+<p class="meta">
+  Developer: Mustafa Çevik (AgilerSoft) ·
+  Application: Dopamine Tracker (<code>com.agilersoft.dopaminetracker</code>) ·
+  Last updated: May 8, 2026
+</p>
+
+<p>
+  This page explains how to permanently delete your Dopamine Tracker account and all
+  associated data. The action cannot be undone.
+</p>
+
+<h2>Method 1: Delete from inside the app (Recommended)</h2>
+
+<p>The fastest path is the in-app deletion flow — one tap permanently removes all data.</p>
+
+<div class="step">
+  <strong>Step 1.</strong> Open Dopamine Tracker and sign in to your account.
+</div>
+<div class="step">
+  <strong>Step 2.</strong> Tap the <strong>Profile</strong> tab in the bottom navigation.
+</div>
+<div class="step">
+  <strong>Step 3.</strong> Scroll to the bottom and tap <strong>"Delete my account"</strong>.
+</div>
+<div class="step">
+  <strong>Step 4.</strong> Confirm: tap "Continue" → "Delete my account permanently".
+</div>
+
+<p>
+  Once confirmed, your account and all associated data are
+  <strong>permanently and immediately deleted</strong> from our Supabase servers.
+</p>
+
+<h2>Method 2: Request deletion by email</h2>
+
+<p>
+  If you cannot access the app (lost device, uninstalled the app, etc.), you can submit
+  a deletion request by email:
+</p>
+
+<div class="step">
+  <strong>To:</strong> <a href="mailto:agilersoft@gmail.com?subject=Account%20Deletion%20Request">agilersoft@gmail.com</a><br>
+  <strong>Subject:</strong> Account Deletion Request<br>
+  <strong>Body:</strong> Send the request from the email address linked to your account.
+  Clearly state that you want your account deleted.
+</div>
+
+<p>
+  Your request is processed within <strong>7 business days</strong> and your account is deleted.
+  You'll receive a confirmation email when the deletion is complete.
+</p>
+
+<h2>What gets deleted</h2>
+<div class="deleted">
+  <strong>Permanently deleted data:</strong>
+  <ul>
+    <li>Account identity (email, user ID)</li>
+    <li>Profile (name, language, theme, motivations, goals)</li>
+    <li>Score history (daily dopamine scores)</li>
+    <li>Focus session records</li>
+    <li>Restriction rules</li>
+    <li>Streak data</li>
+    <li>Authentication tokens and session data</li>
+  </ul>
+</div>
+
+<h2>What is retained</h2>
+<div class="retained">
+  <strong>Retained for legal/operational reasons:</strong>
+  <ul>
+    <li>Anonymous error logs (90 days) — no personal data, cannot be linked to your account</li>
+  </ul>
+  <p style="margin-top: 8px; font-size: 13px;">
+    These logs are automatically purged within 90 days.
+  </p>
+</div>
+
+<h2>Local data on your device</h2>
+<p>
+  The app's local database on your device (usage statistics, cache) is
+  <strong>automatically deleted by the Android system when you uninstall the app</strong>.
+  Note that this data is never sent to our servers.
+</p>
+
+<h2>Questions?</h2>
+<p>
+  Email <a href="mailto:agilersoft@gmail.com">agilersoft@gmail.com</a>.
+  We typically respond within 1-2 business days.
+</p>
+
+<p style="margin-top: 32px;">
+  📜 <a href="./">Privacy Policy</a>
+</p>
+
+</section>
+
+</body>
+</html>
